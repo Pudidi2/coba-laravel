@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Models;
+
+class post
+{
+   private static $blog_posts =  [
+    [
+        "title" => "Xi Fenk Hoetang",
+        "slug" => "xi-fenk-hoetang",
+        "author" => "XzoCowwie",
+        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et animi doloremque quos earum consequatur velit saepe aspernatur veritatis dolorum fuga quae aliquam cupiditate eius fugit laudantium commodi similique magnam, explicabo maiores maxime quod possimus! Eligendi voluptates consectetur aperiam totam laboriosam rerum maiores odit a repudiandae facilis maxime eos soluta nisi ab ex atque, neque enim culpa modi. Ipsa, nam ex. Quas quae maiores quam accusantium tenetur modi sequi, distinctio possimus?"
+    ],
+    [
+        "title" => "Cara Menculik Jendral",
+        "slug" => "cara-menculik-jendral",
+        "author" => "Dn Aidit",
+        "body" => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio autem vel accusamus necessitatibus repudiandae, expedita porro quisquam aliquid architecto beatae ab similique nihil distinctio eligendi. Quasi, mollitia laboriosam excepturi impedit minus voluptates eveniet tenetur repellat suscipit eaque, quae totam qui praesentium amet. Maiores adipisci dolorem totam optio vel ipsum sapiente non! Aliquam at maiores aliquid explicabo ipsum libero nostrum eius sint. Repellendus iure tempora nulla! Ipsa laboriosam optio modi, accusantium rem consequatur. Nam consequuntur facilis voluptatibus labore ducimus a adipisci nulla itaque, aspernatur quae iste cumque blanditiis excepturi, deleniti totam at ipsam neque, odit commodi non sit modi natus est?"
+    ]
+];
+
+public static function all() 
+{
+    return collect(self::$blog_posts);
+}
+
+    public static function find($slug)
+    {
+        $posts = static::all(); 
+        return $posts->firstwhere('slug', $slug);
+    }
+
+}
